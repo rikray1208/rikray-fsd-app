@@ -1,0 +1,10 @@
+.LanguageSwitcher {
+  padding: var(--space-sm);
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--bg-hover);
+  }
+}

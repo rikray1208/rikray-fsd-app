@@ -1,0 +1,9 @@
+.ThemeSwitcher {
+  padding: var(--space-sm);
+
+  &:hover {
+    background-color: var(--bg-hover);
+    border-radius: 12px;
+    cursor: pointer;
+  }
+}

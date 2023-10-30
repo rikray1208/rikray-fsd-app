@@ -1,0 +1,16 @@
+.Navbar {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+
+  background-color: var(--nord1);
+}
+
+.actions {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
