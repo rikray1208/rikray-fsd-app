@@ -9,8 +9,8 @@ interface LanguageSwitcherProps {
 }
 
 export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
-    className,
-}) => {
+                                                                      className,
+                                                                  }) => {
     const { t, i18n } = useTranslation();
 
     const toggle = async () => {
@@ -18,11 +18,12 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     };
 
     return (
-        <div
-            className={classNames(styles.LanguageSwitcher, {}, [className])}
-            onClick={toggle}
-        >
-            {t('lang')}
-        </div>
+      <div
+        data-testid={'LanguageSwitcher'}
+        className={classNames(styles.LanguageSwitcher, {}, [className])}
+        onClick={toggle}
+      >
+          {t('lang')}
+      </div>
     );
 };

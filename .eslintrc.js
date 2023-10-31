@@ -15,17 +15,6 @@ module.exports = {
             version: "detect",
         }
     },
-    overrides: [
-        {
-            env: {
-                node: true,
-            },
-            files: ['.eslintrc.{js,cjs}'],
-            parserOptions: {
-                sourceType: 'script',
-            },
-        },
-    ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 'latest',
@@ -53,4 +42,12 @@ module.exports = {
         'no-shadow': 'off',
         'i18next/no-literal-string': 'warn',
     },
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'react/no-children-prop': 'off',
+            },
+        },
+    ],
 };

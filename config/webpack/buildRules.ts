@@ -3,21 +3,23 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
 
 export const buildRules = (options: BuildOptions): webpack.RuleSetRule[] => {
-    const fileLoader = {
-        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
-        use: [
-            {
-                loader: 'file-loader',
-            },
-        ],
-    };
-
-    const svgRule = {
-        test: /\.svg$/i,
+    const svgLoader = {
+        test: /\.svg$/,
         use: ['@svgr/webpack'],
     };
 
-    const scssRule: webpack.RuleSetRule = {
+    const babelLoader = {
+        test: /\.(js|jsx|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env'],
+            },
+        },
+    };
+
+    const cssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
             MiniCssExtractPlugin.loader,
@@ -27,8 +29,8 @@ export const buildRules = (options: BuildOptions): webpack.RuleSetRule[] => {
                     modules: {
                         auto: /.module./,
                         localIdentName: options.isDev
-                            ? '[name]__[hash:base64:5]'
-                            : '[hash:base64:8]',
+                          ? '[name]]--[hash:base64:5]'
+                          : '[hash:base64:8]',
                     },
                 },
             },
@@ -36,11 +38,26 @@ export const buildRules = (options: BuildOptions): webpack.RuleSetRule[] => {
         ],
     };
 
-    const tsRule: webpack.RuleSetRule = {
+    const typescriptLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
     };
 
-    return [fileLoader, svgRule, tsRule, scssRule];
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    };
+
+    return [
+        fileLoader,
+        svgLoader,
+        babelLoader,
+        typescriptLoader,
+        cssLoader,
+    ];
 };
