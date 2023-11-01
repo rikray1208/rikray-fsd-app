@@ -1,8 +1,10 @@
 .LanguageSwitcher {
+  width: fit-content;
   padding: var(--space-sm);
   border-radius: 12px;
 
   cursor: pointer;
+  user-select: none;
 
   &:hover {
     background-color: var(--bg-hover);
