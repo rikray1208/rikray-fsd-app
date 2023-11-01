@@ -41,6 +41,7 @@ module.exports = {
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
         'i18next/no-literal-string': 'warn',
+        'object-curly-spacing': ["warn", "always"]
     },
     overrides: [
         {

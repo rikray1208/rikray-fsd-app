@@ -6,15 +6,15 @@ describe('shared/lib/classNames', () => {
     });
 
     test('with mode', () => {
-        expect(classNames('TestArg', {"light": true})).toBe("TestArg light");
+        expect(classNames('TestArg', { "light": true })).toBe("TestArg light");
     });
 
     test('with mode false', () => {
-        expect(classNames('TestArg', {"light": false})).toBe("TestArg");
+        expect(classNames('TestArg', { "light": false })).toBe("TestArg");
     });
 
     test('with mode and additional', () => {
-        expect(classNames('TestArg', {"light": true}, ['additional'])).toBe("TestArg light additional");
+        expect(classNames('TestArg', { "light": true }, ['additional'])).toBe("TestArg light additional");
     });
 
 })

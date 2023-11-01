@@ -6,7 +6,7 @@ import { sharedUiComponents } from '@/shared/ui';
 import { RouteName } from '@/shared/config';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { LanguageSwitcher } from '@/features/LanguageSwitcher';
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 const { AppLink } = sharedUiComponents;
 

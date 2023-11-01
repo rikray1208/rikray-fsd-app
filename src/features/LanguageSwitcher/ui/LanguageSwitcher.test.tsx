@@ -1,6 +1,6 @@
 import { LanguageSwitcher } from "@/features/LanguageSwitcher";
-import {renderWithTranslation} from "@/shared/lib/tests/renderWithTranslation";
-import {screen, fireEvent} from "@testing-library/react";
+import { renderWithTranslation } from "@/shared/lib/tests/renderWithTranslation";
+import { screen, fireEvent } from "@testing-library/react";
 
 describe('LanguageSwitcher', () => {
     test('toggle check', () => {
